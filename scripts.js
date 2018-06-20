@@ -5,12 +5,15 @@ const buttons = document.querySelectorAll('[data-time]');
 
 
 function timer(seconds) {
+    // adds functionality for removing existing timer 
+    clearInterval(countdown);
+
     const now = Date.now();
     const then = now + seconds * 1000;
     displayTimeLeft(seconds);
     displayEndTime(then);
     
-   Countdown = setInterval(()=> {
+   countdown = setInterval(()=> {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
         // Sjekker om nedtelling bør stoppes //
         if(secondsLeft < 0 ) {
@@ -37,8 +40,11 @@ function displayEndTime(timestamp) {
     endTime.textContent = `Be back at ${hours}:${minutes< 10 ? '0': '' }${minutes}`;
 }
 
+function startTimer () {
+    const seconds = parseInt(this.dataset.time);
+    timer(seconds);
+
+}
+
 buttons.forEach(button => button.addEventListener('click', startTimer));
 
-function startTimer () {
-    console.log(this);
-}
