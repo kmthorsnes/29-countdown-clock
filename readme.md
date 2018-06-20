@@ -1,7 +1,7 @@
 ### Countdown clock
 
 JS Exercises. 28th challenge of the #JavaScript30 course.
-Using JS to create a countdown timer
+Using JS to create a countdown timer.
 
 ## Technology
 
