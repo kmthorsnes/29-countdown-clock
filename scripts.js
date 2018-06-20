@@ -1,6 +1,7 @@
 let countdown;
 const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
+const buttons = document.querySelectorAll('[data-time]');
 
 
 function timer(seconds) {
@@ -34,6 +35,10 @@ function displayEndTime(timestamp) {
     const hours = end.getHours();
     const minutes = end.getMinutes();  
     endTime.textContent = `Be back at ${hours}:${minutes< 10 ? '0': '' }${minutes}`;
+}
 
+buttons.forEach(button => button.addEventListener('click', startTimer));
 
+function startTimer () {
+    console.log(this);
 }
